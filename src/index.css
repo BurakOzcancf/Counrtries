@@ -1,0 +1,227 @@
+:root {
+  --Body-BG: hsl(0, 0%, 98%);
+  --Element-BG: white;
+  --Element-Text: hsl(200, 15%, 8%);
+  --Shadow: hsl(0, 0%, 82%);
+  --Element-Text-Input: hsl(0, 0%, 52%);
+
+  --F-W-300: 300;
+  --F-W-600: 600;
+  --F-W-800: 800;
+}
+[data-theme="dark"] {
+  --Body-BG: hsl(207, 26%, 17%);
+  --Element-BG: hsl(209, 23%, 22%);
+  --Element-Text: white;
+  --Shadow: hsl(209, 23%, 22%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--Body-BG);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: var(--Element-Text);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--Element-Text-Input);
+}
+ul {
+  list-style: none;
+}
+.App {
+  overflow: auto;
+  min-height: 100vh;
+  background-color: var(--Body-BG);
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100rem;
+  margin: auto;
+  padding: 1rem 2rem;
+  color: var(--Element-Text);
+  background-color: var(--Element-BG);
+  transition: 200ms;
+}
+.header__switcher {
+  height: min-content;
+  margin: auto 0;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  color: var(--Element-Text);
+  background-color: transparent;
+}
+
+.hero {
+  max-width: 100rem;
+  margin: auto;
+  padding: 2rem;
+  background-color: var(--Body-BG);
+  transition: 200ms;
+}
+.hero__filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.hero__input,
+.hero__select {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  color: var(--Element-Text);
+  background-color: var(--Element-BG);
+  box-shadow: 0 0 5px 0.1px var(--Shadow);
+}
+.hero__input::placeholder {
+  font-size: 0.75rem;
+  color: var(--Element-Text);
+}
+
+.hero__countries {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+.hero__country {
+  margin: 2rem auto;
+  padding-bottom: 1rem;
+  max-width: 19rem;
+  border-radius: 0.3rem;
+  color: var(--Element-Text);
+  background-color: var(--Element-BG);
+  box-shadow: 0 0 5px 0.1px var(--Shadow);
+}
+.hero__country li:not(:first-child) {
+  padding: 0.2rem 1rem;
+}
+.hero__country span {
+  color: var(--Element-Text-Input);
+}
+
+.hero__flag {
+  height: 12.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem 0.3rem 0 0;
+  background: center/cover no-repeat;
+}
+.hero__country li {
+  font-weight: var(--F-W-600);
+}
+.hero__country li span {
+  font-weight: var(--F-W-300);
+}
+.hero__name {
+  margin: 0.5rem 0;
+  font-size: 1.15rem;
+  font-weight: var(--F-W-800);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  max-width: 100rem;
+  margin: auto;
+  font-weight: var(--F-W-600);
+  color: var(--Element-Text);
+  background-color: var(--Body-BG);
+}
+.details span {
+  color: var(--Element-Text-Input);
+  font-weight: var(--F-W-300);
+}
+.details__btn {
+  width: fit-content;
+  margin: 1rem 0 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  color: var(--Element-Text);
+  background-color: var(--Element-BG);
+  box-shadow: 0 0 5px 0.1px var(--Shadow);
+  cursor: pointer;
+}
+.details__flag {
+  height: 12.5rem;
+  width: 19rem;
+  margin: 0 auto 2rem;
+  background: center/cover no-repeat;
+  box-shadow: 0 0 5px 0.1px var(--Shadow);
+  transition: 1s;
+}
+.details__name {
+  margin: 1rem 0;
+}
+.details__content {
+  max-width: 19rem;
+  margin: auto;
+}
+.loading {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 2rem;
+}
+@media only screen and (min-width: 38rem) {
+  .hero__countries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .details__container {
+    margin: auto;
+  }
+  .details__btn {
+    margin: 2rem 2rem 1rem;
+  }
+  .details__flag {
+    height: 15rem;
+    width: 22.5rem;
+    margin: 0 auto 2rem;
+  }
+}
+@media only screen and (min-width: 56rem) {
+  .hero__countries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .details__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .details__info {
+    display: flex;
+    gap: 1rem;
+  }
+  .details__flag {
+    height: 19rem;
+    width: 28rem;
+    margin: 0;
+  }
+  .details__name {
+    margin-bottom: 2rem;
+  }
+  .details__content {
+    max-width: none;
+  }
+  .details__border {
+    margin: 2rem 0;
+  }
+}
+@media only screen and (min-width: 87.5rem) {
+  .hero__countries {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
