@@ -1,5 +1,5 @@
 <h1 align="center">Countries</h1>
-<img src=./public/Countries.PNG>
+<img src=./public/countries.PNG>
 <h2>Countries app which is popular to find information and details about countries.</h2>
 
 ## Table of contents
